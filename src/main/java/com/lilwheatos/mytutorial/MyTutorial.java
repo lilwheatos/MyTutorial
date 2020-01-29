@@ -57,7 +57,6 @@ public class MyTutorial
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK,new Item.Properties()).setRegistryName("firstblock"));
-            LOGGER.log(Level.DEBUG,"Items Registered");
         }
     }
 }
