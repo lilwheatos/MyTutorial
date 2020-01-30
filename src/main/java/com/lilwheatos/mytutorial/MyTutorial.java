@@ -2,6 +2,7 @@ package com.lilwheatos.mytutorial;
 
 import com.lilwheatos.mytutorial.blocks.FirstBlock;
 import com.lilwheatos.mytutorial.blocks.ModBlocks;
+import com.lilwheatos.mytutorial.items.FirstItem;
 import com.lilwheatos.mytutorial.setup.ClientProxy;
 import com.lilwheatos.mytutorial.setup.IProxy;
 import com.lilwheatos.mytutorial.setup.ModSetup;
@@ -65,6 +66,7 @@ public class MyTutorial
                     .group(setup.itemgroup);
 
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK,properties).setRegistryName("firstblock"));
+            event.getRegistry().register(new FirstItem());
         }
     }
 }
