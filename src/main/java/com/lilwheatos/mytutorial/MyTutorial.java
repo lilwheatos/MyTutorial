@@ -4,6 +4,7 @@ import com.lilwheatos.mytutorial.blocks.FirstBlock;
 import com.lilwheatos.mytutorial.blocks.ModBlocks;
 import com.lilwheatos.mytutorial.setup.ClientProxy;
 import com.lilwheatos.mytutorial.setup.IProxy;
+import com.lilwheatos.mytutorial.setup.ModSetup;
 import com.lilwheatos.mytutorial.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -34,6 +35,8 @@ public class MyTutorial
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
+    public static ModSetup setup = new ModSetup();
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -43,6 +46,8 @@ public class MyTutorial
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        setup.init();
+        proxy.init();
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -56,7 +61,10 @@ public class MyTutorial
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK,new Item.Properties()).setRegistryName("firstblock"));
+            Item.Properties properties = new Item.Properties()
+                    .group(setup.itemgroup);
+
+            event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK,properties).setRegistryName("firstblock"));
         }
     }
 }
