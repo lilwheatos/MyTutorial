@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mytutorial:block/facedblock",
+    "up": "mytutorial:block/facedblock",
+    "east": "mytutorial:block/facedblock",
+    "west": "mytutorial:block/facedblock",
+    "north": "mytutorial:block/facedblock_front",
+    "south": "mytutorial:block/facedblock"
+  }
+}

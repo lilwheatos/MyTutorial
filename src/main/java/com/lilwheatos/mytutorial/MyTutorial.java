@@ -1,5 +1,6 @@
 package com.lilwheatos.mytutorial;
 
+import com.lilwheatos.mytutorial.blocks.FacedBlock;
 import com.lilwheatos.mytutorial.blocks.FirstBlock;
 import com.lilwheatos.mytutorial.blocks.ModBlocks;
 import com.lilwheatos.mytutorial.items.FirstItem;
@@ -58,6 +59,7 @@ public class MyTutorial
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new FirstBlock());
+            event.getRegistry().register(new FacedBlock());
         }
 
         @SubscribeEvent
@@ -66,6 +68,7 @@ public class MyTutorial
                     .group(setup.itemgroup);
 
             event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK,properties).setRegistryName("firstblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.FACEDBLOCK,properties).setRegistryName("facedblock"));
             event.getRegistry().register(new FirstItem());
         }
     }

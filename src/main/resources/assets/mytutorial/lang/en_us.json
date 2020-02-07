@@ -1,6 +1,7 @@
 {
   "item.mytutorial.firstitem": "First Item",
   "block.mytutorial.firstblock": "First Block",
+  "block.mytutorial.facedblock": "Faced Block",
 
   "_comment": "Creative Tabs",
   "itemGroup.mytutorial": "My Tutorial"

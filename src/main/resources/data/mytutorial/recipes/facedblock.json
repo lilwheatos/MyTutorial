@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "x x",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "mytutorial:firstblock"
+    }
+  },
+  "result": {
+    "item": "mytutorial:facedblock"
+  }
+}
